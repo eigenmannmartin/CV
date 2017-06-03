@@ -1,0 +1,96 @@
+% ============================================================
+% Document is based on the awesome AltaCV template.
+% Take a look at: https://github.com/liantze/AltaCV
+% ============================================================
+
+% ===============
+% Setup
+% ===============
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[10pt,a4paper]{altacv}
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+% ===============
+% Colors
+% ===============
+\definecolor{Accent}{HTML}{3F769E}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{SlateGrey}
+\colorlet{accent}{Accent}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+
+\begin{document}
+% ===============
+% Header
+% ===============
+\name{Martin Eigenmann}
+\tagline{Developer and Perfectionist}
+\photo{2.8cm}{Image}
+\personalinfo{%
+  \email{contact@eigenmannmartin.ch}
+  \phone{+41 78 697 35 14}
+  \homepage{eigenmannmartin.ch}
+  \twitter{@eigenmannmartin}
+  \linkedin{linkedin.com/in/eigenmannmartin}
+  \github{github.com/eigenmannmartin}
+}
+
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+% ===============
+% Experience
+% ===============
+\cvsection[sidebar]{Experience}
+
+\cvevent{Full stack developer}{Kantonsspital St.Gallen}{Jan. 2016 -- Ongoing}{St. Gallen}
+\begin{itemize}
+\item Design, architecture and project planning
+\item Lead full stack developer for Clean Care Monitor, a process audit and validation application for health care
+\item Contributor to guidelines.ch, responsible for rewriting the stack including design, architecture and UX
+\end{itemize}
+\divider
+
+\cvevent{Teacher}{GBS St.Gallen}{Jul. 2016 -- Feb. 2017}{St. Gallen}
+Tutoring apprentices in mathematics and physics with a focus on real world applications
+\divider
+
+\cvevent{SAP Consultant / IT Consultant}{Loepfe Brothers Ltd.}{Apr. 2011 -- Oct. 2015}{Zürich}
+\begin{itemize}
+\item Project stream lead during SAP implementation and rollout
+\item Supervised and enhanced network security and data protection
+\item Recruited and mentored IT apprentices (EFZ)
+\end{itemize}
+\divider
+
+\cvevent{IT system engineer}{Abacus Research Ltd.}{July 2006 -- Oct. 2010}{St. Gallen}
+\begin{itemize}
+\item Windows package engineering and automated client rollouts
+\item Supported internal and external clients
+\item Contributed to network infrastructure automation
+\end{itemize}
+
+% ===============
+% Education
+% ===============
+\cvsection{Education}
+
+\cvevent{B.Sc.\ ZFH in Computer Science}{ZHAW Zürich}{Aug. 2011 -- July 2015}{}
+Thesis title: Synchronization and Conflict Resolution Strategies in Web Applications
+\divider
+
+\cvevent{Informatiker EFZ}{GBS St.Gallen}{Sept. 2006 -- July 2010}{}
+
+
+\end{document}
