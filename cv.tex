@@ -5,7 +5,8 @@
 
 % Commands:
 % pdflatext cv.tex
-%gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=cv-compressed.pdf cv.pdf
+% latexmk -f -pdf -pvc cv.tex
+% gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=cv-compressed.pdf cv.pdf
 %
 
 % ===============
@@ -59,16 +60,10 @@
 % ===============
 \cvsection[sidebar]{Experience}
 
-\cvevent{Scrum Master and Project manager}{ImagineCargo}{Dec. 2018 -- Ongoing}{Zürich}
+\cvevent{Tech Lead}{ImagineCargo}{Feb. 2018 -- Ongoing}{Zürich}
 \begin{itemize}
-\item Design, development and enhancement of core software features
-\item Project lead and management
-\item Supervise and lead external software developers
-\end{itemize}
-\divider
-
-\cvevent{Full stack developer}{ImagineCargo}{Feb. 2018 -- Nov. 2018}{Zürich}
-\begin{itemize}
+\item Tech lead for Panda, an extremely versatile order management and delivery planning/optimizing tool for the logistics industry
+\item Supervision and lead of external software developers
 \item Lead full stack developer for Samba, a highly flexible website plugin for setteling and managing deliveries or pickups
 \item Consultant and full stack developer for internal and external software projects
 \end{itemize}
@@ -90,16 +85,19 @@
 \end{itemize}
 \divider
 
-% ===============
-% Education
-% ===============
-\cvsection{Education}
+\cvsection{A Day of My Life}
 
-\cvevent{B.Sc.\ ZFH in Computer Science}{ZHAW Zürich}{Aug. 2011 -- July 2015}{}
-Thesis title: Synchronization and Conflict Resolution Strategies in Web Applications
-\divider
-
-\cvevent{Informatiker EFZ}{GBS St.Gallen}{Sept. 2006 -- July 2010}{}
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+\wheelchart{1.5cm}{0.5cm}{%
+  7/8em/accent!30/{Sleep,\\important for health},
+  2/8em/accent!40/Reading,
+  8/8em/accent!50/Daytime job,
+  2/10em/accent/Sports and meditation,
+  2/8em/accent!10/Cooking,
+  3/6em/accent!20/Spending time with family
+}
 
 
 \end{document}
