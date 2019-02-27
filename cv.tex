@@ -13,7 +13,7 @@
 % Setup
 % ===============
 \PassOptionsToPackage{dvipsnames}{xcolor}
-\documentclass[10pt,a4paper]{altacv}
+\documentclass[9pt,a4paper]{altacv}
 \geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
 
 \usepackage[utf8]{inputenc}
@@ -59,15 +59,15 @@
 % ===============
 % Experience
 % ===============
-\cvsection[sidebar]{Experience}
+\cvsection[sidebar]{Work Experience}
 
 
 \cvevent{Tech Lead}{ImagineCargo}{Feb. 2018 -- Ongoing}{Zürich}
 \begin{itemize}
 \item Tech lead for Panda, an extremely versatile order management and delivery planning/optimizing platform for the logistics industry
-\item Making high-level design choices and defining tecnical standards, including coding standards, tools and platforms.
+\item Making high-level design choices and defining technical standards, including coding standards, tools and platforms.
 \item Supervision and coordination of external software developers
-\item Lead full stack developer for Samba, a highly flexible website plugin for setteling and managing deliveries or pickups
+\item Lead full stack developer for Samba, a highly flexible website plugin for settling and managing deliveries or pickups
 \end{itemize}
 
 \divider
@@ -85,26 +85,55 @@
 \begin{itemize}
 \item Project stream lead during SAP implementation and rollout
 \item Supervised and enhanced network security and data protection
-\item Recruited and mentored IT apprentices (EFZ)
+%\item Recruited and mentored IT apprentices (EFZ)
 \end{itemize}
 
-\bigskip
-\cvsection{A Day of My Life}
-\bigskip
-\bigskip
+\divider
+
+\cvevent{IT Apprentice}{Abacus Research AG}{Jul. 2006 -- Okt. 2010}{St.Gallen}
+\begin{itemize}
+\item Everything IT related, from installing a PC up to configuring complex server and network infrastructure
+as well as trouble shooting and customer support.
+\end{itemize}
 
 
-% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
-% \wheelchart{outer radius}{inner radius}{
-% comma-separated list of value/text width/color/detail}
-\wheelchart{1.5cm}{0.5cm}{%
-  7/8em/accent!30/{Sleep,\\important for health},
-  2/8em/accent!40/Reading,
-  8/8em/accent!50/Daytime job,
-  2/10em/accent/Sports and meditation,
-  2/8em/accent!10/Cooking,
-  3/6em/accent!20/Spending time with family
-}
+
+\cvsection{Project Hightlights}
+{\color{emphasis}Rheumafit.ch\par}
+\smallskip
+{\small\makebox[0.6\linewidth][l]{\small\color{body}{\faBars\hspace{0.5em}} Vue, Django, Postmark, Vimeo \& Heroku}}%
+{\small\makebox[0.4\linewidth][l]{\small\color{body}{\faMapMarker\hspace{0.5em}} Bechterew Schweiz}}\par
+\smallskip
+
+This platform provides a large variety of physio therapeutic exercises for patients with Bechterew's disease
+and aims to improve the health and mobility of the affected.
+
+\smallskip
+
+During one month of my civil service I assisted in defining requirements and appearance and
+implemented the platform according to the specifications. Since then, I am tasked with maintaining
+and improving the platform.
+
+
+\divider
+
+
+{\color{emphasis}Clean Care Monitor\par}
+\smallskip
+{\small\makebox[0.6\linewidth][l]{\small\color{body}{\faBars\hspace{0.5em}} React, Apollo, GraphQL, KnexJS \& PostgeSQL}}%
+{\small\makebox[0.4\linewidth][l]{\small\color{body}{\faMapMarker\hspace{0.5em}} Kantonsspital St.Gallen}}\par
+\smallskip
+
+In Order to find and analyze causes of postoperative infection it was necessary to
+build a web based mobile app to allow standardized auditing of any kind of workflow
+before and during a surgery. Intensive requirement engineering beforehand,
+extensive testing and analyzing user interactions with the app where required
+to verify its applicability.
+
+\smallskip
+
+I was able to demonstrate that a rebuild of the application with a streamlined architecture
+and fewer dependencies meets more (future)requirements and is easier to maintain while still holding all deadlines.
 
 
 \end{document}

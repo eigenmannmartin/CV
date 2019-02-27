@@ -188,12 +188,13 @@
 % v1.1.4: fixes inconsistent font size
 \newcommand{\cvevent}[4]{%
   {\large\color{emphasis}#1\par}
-  \smallskip\normalsize
-  \ifstrequal{#2}{}{}{
-  \textbf{\color{accent}#2}\par
-  \smallskip}
-  \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar\hspace{0.5em}#3}}}%
-  \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker\hspace{0.5em}#4}}}\par
+  \smallskip
+  %\smallskip\normalsize
+  %\ifstrequal{#2}{}{}{
+  %\textbf{\color{accent}#2}\par
+  %\smallskip}
+  \ifstrequal{#3}{}{}{{\small\makebox[0.6\linewidth][l]{\faCalendar\hspace{0.5em}#3}}}%
+  \ifstrequal{#4}{}{}{{\small\makebox[0.4\linewidth][l]{\faMapMarker\hspace{0.5em}#2}}}\par
   \medskip\normalsize
 }
 
