@@ -98,6 +98,7 @@
 
 \colorlet{accent}{blue!70!black}
 \colorlet{heading}{black}
+\colorlet{headingline}{black}
 \colorlet{emphasis}{black}
 \colorlet{body}{black!80!white}
 \newcommand{\itemmarker}{{\small\textbullet}}
@@ -176,8 +177,8 @@
 \newcommand{\cvsection}[2][]{%
   \bigskip%
   \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
-  {\color{heading}\LARGE\bfseries\MakeUppercase{#2}}\\[-1ex]%
-  {\color{heading}\rule{\linewidth}{2pt}\par}\medskip
+  {\color{heading}\LARGE\bfseries{#2}}\\[-1ex]%
+  {\color{headingline}\hdashrule{\linewidth}{1pt}{0.5ex}\par}\medskip
 }
 
 \newcommand{\cvsubsection}[1]{%
