@@ -20,6 +20,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[default]{lato}
 \usepackage{setspace}
+\usetikzlibrary{calc}
 
 \renewcommand{\itemmarker}{{\small\textbullet}}
 \renewcommand{\ratingmarker}{\faCircle}
@@ -30,11 +31,24 @@
 \definecolor{Accent}{HTML}{3F769E}
 \definecolor{SlateGrey}{HTML}{2E2E2E}
 \definecolor{LightGrey}{HTML}{666666}
+\definecolor{background}{HTML}{F1F1F1}
 \colorlet{heading}{Accent}
 \colorlet{accent}{Accent!90}
 \colorlet{headingline}{Accent!30}
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
+
+
+\def\SLIDER#1#2{% 1: length, 2: position of the mark (0 to 1)
+\tikz[baseline=-0.1cm]{
+ \coordinate (start) at (0,0);
+ \coordinate (end) at (#1,0);
+ \coordinate (mark) at ($(start)!#2!(end)$);
+ \draw[line width=1pt, line cap=round, accent!30] (start) -- (end);
+ \node[fill=white, draw=accent, very thin,
+            circle, minimum size=0.35cm, inner sep=0pt] at (mark) {};
+}
+}
 
 
 \begin{document}
@@ -61,6 +75,12 @@
 % Experience
 % ===============
 \cvsection[sidebar]{Work Experience}
+
+\makebox[0pt][l]{%
+  \hspace{-4cm}
+  \raisebox{-\totalheight}[0pt][0pt]{%
+   {\color{background}\fontsize{250}{48}\faRocket}
+}}%
 
 
 \cvevent{Tech Lead}{ImagineCargo}{Feb. 2018 -- Ongoing}{Zürich}
@@ -100,6 +120,14 @@ as well as trouble shooting and customer support.
 
 
 \cvsection{Project Hightlights}
+
+\makebox[0pt][l]{%
+  \hspace{-5cm}
+  \raisebox{-\totalheight}[0pt][0pt]{%
+   {\color{background}\fontsize{250}{48}\faHeart}
+}}%
+
+
 {\color{emphasis}Rheumafit.ch\par}
 \smallskip
 {\small\makebox[0.6\linewidth][l]{\small\color{body}{\faBars\hspace{0.5em}} Vue, Django, Postmark, Vimeo \& Heroku}}%
