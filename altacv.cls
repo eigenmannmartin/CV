@@ -133,6 +133,10 @@
 \newcommand{\githubsymbol}{\faGithub}
 \newcommand{\orcidsymbol}{\aiOrcid}
 \newcommand{\mailsymbol}{\faEnvelope}
+\newcommand{\birthdaysymbol}{\faBirthdayCake}
+\newcommand{\statussymbol}{\faHandStopO}
+\newcommand{\nationalitysymbol}{\faFlagO}
+\newcommand{\babysymbol}{\faChild}
 
 \newcommand{\printinfo}[2]{\mbox{\textcolor{accent}{\normalfont #1}\hspace{0.5em}#2\hspace{2em}}}
 
@@ -148,6 +152,10 @@
 \newcommand{\github}[1]{\printinfo{\githubsymbol}{#1}}
 \newcommand{\orcid}[1]{\printinfo{\orcidsymbol}{#1}}
 \newcommand{\location}[1]{\printinfo{\locationsymbol}{#1}}
+\newcommand{\birthday}[1]{\printinfo{\birthdaysymbol}{#1}}
+\newcommand{\status}[1]{\printinfo{\statussymbol}{#1}}
+\newcommand{\nationality}[1]{\printinfo{\nationalitysymbol}{#1}}
+\newcommand{\baby}[1]{\printinfo{\babysymbol}{#1}}
 
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
 
