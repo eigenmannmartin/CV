@@ -118,7 +118,7 @@
 % \RequirePackage{marginfix}
 
 \setlength{\parindent}{0pt}
-\newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
+\newcommand{\divider}{\bigskip\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\bigskip\medskip}
 
 \newenvironment{fullwidth}{%
   \begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
@@ -184,9 +184,9 @@
 
 \newcommand{\cvsection}[2][]{%
   \bigskip%
-  \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
+  \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip-2pt}\raggedright\input{#1}}}%
   {\color{heading}\LARGE\bfseries{#2}}\\[-1ex]%
-  {\color{headingline}\hdashrule{\linewidth}{1pt}{0.5ex}\par}\medskip
+  {\color{headingline}\hdashrule{\linewidth}{1pt}{0.5ex}\par}\bigskip
 }
 
 \newcommand{\cvsubsubsection}[1]{%
@@ -231,7 +231,7 @@
 }
 
 \newcommand{\cvskill}[2]{%
-\textcolor{emphasis}{\textbf{#1}}\hfill
+\textcolor{emphasis}#1\hfill
 \foreach \x in {1,...,5}{%
   \space{\ifnumgreater{\x}{#2}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
 }
