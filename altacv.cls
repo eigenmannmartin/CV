@@ -189,19 +189,30 @@
   {\color{headingline}\hdashrule{\linewidth}{1pt}{0.5ex}\par}\medskip
 }
 
-\newcommand{\cvsubsection}[1]{%
+\newcommand{\cvsubsubsection}[1]{%
   \smallskip%
-  {\color{emphasis}\large\bfseries{#1}\par}\medskip
+  {\small\color{emphasis}{#1}}
+}
+
+\newcommand{\cvsubsection}[1]{%
+  \cvsubsubsection{#1}\par\smallskip
 }
 
 % v1.1.4: fixes inconsistent font size
+\newcommand{\cvev}[4]{%
+  \ifstrequal{#3}{}{}{{\makebox[0.3\linewidth][l]{#3}}}%
+  \makebox[0.4\linewidth][c]{\LARGE\color{emphasis}#1}%
+  \ifstrequal{#4}{}{}{{\makebox[0.3\linewidth][r]{#2}}}\par
+  \medskip\normalsize
+}
+
 \newcommand{\cvevent}[4]{%
   {\large\color{emphasis}#1\par}
   \smallskip
-  %\smallskip\normalsize
-  %\ifstrequal{#2}{}{}{
-  %\textbf{\color{accent}#2}\par
-  %\smallskip}
+  \smallskip\normalsize
+  \ifstrequal{#2}{}{}{
+  {#2}\par
+  \smallskip}
   \ifstrequal{#3}{}{}{{\small\makebox[0.6\linewidth][l]{\faCalendar\hspace{0.5em}#3}}}%
   \ifstrequal{#4}{}{}{{\small\makebox[0.4\linewidth][l]{\faMapMarker\hspace{0.5em}#2}}}\par
   \medskip\normalsize
