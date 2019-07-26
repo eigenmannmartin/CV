@@ -118,7 +118,7 @@
 % \RequirePackage{marginfix}
 
 \setlength{\parindent}{0pt}
-\newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
+\newcommand{\divider}{\bigskip\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\bigskip\medskip}
 
 \newenvironment{fullwidth}{%
   \begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
@@ -184,24 +184,35 @@
 
 \newcommand{\cvsection}[2][]{%
   \bigskip%
-  \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
+  \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip-2pt}\raggedright\input{#1}}}%
   {\color{heading}\LARGE\bfseries{#2}}\\[-1ex]%
-  {\color{headingline}\hdashrule{\linewidth}{1pt}{0.5ex}\par}\medskip
+  {\color{headingline}\hdashrule{\linewidth}{1pt}{0.5ex}\par}\bigskip
+}
+
+\newcommand{\cvsubsubsection}[1]{%
+  \smallskip%
+  {\small\color{emphasis}{#1}}
 }
 
 \newcommand{\cvsubsection}[1]{%
-  \smallskip%
-  {\color{emphasis}\large\bfseries{#1}\par}\medskip
+  \cvsubsubsection{#1}\par\smallskip
 }
 
 % v1.1.4: fixes inconsistent font size
+\newcommand{\cvev}[4]{%
+  \ifstrequal{#3}{}{}{{\makebox[0.3\linewidth][l]{#3}}}%
+  \makebox[0.4\linewidth][c]{\LARGE\color{emphasis}#1}%
+  \ifstrequal{#4}{}{}{{\makebox[0.3\linewidth][r]{#2}}}\par
+  \medskip\normalsize
+}
+
 \newcommand{\cvevent}[4]{%
   {\large\color{emphasis}#1\par}
   \smallskip
-  %\smallskip\normalsize
-  %\ifstrequal{#2}{}{}{
-  %\textbf{\color{accent}#2}\par
-  %\smallskip}
+  \smallskip\normalsize
+  \ifstrequal{#2}{}{}{
+  {#2}\par
+  \smallskip}
   \ifstrequal{#3}{}{}{{\small\makebox[0.6\linewidth][l]{\faCalendar\hspace{0.5em}#3}}}%
   \ifstrequal{#4}{}{}{{\small\makebox[0.4\linewidth][l]{\faMapMarker\hspace{0.5em}#2}}}\par
   \medskip\normalsize
@@ -220,7 +231,7 @@
 }
 
 \newcommand{\cvskill}[2]{%
-\textcolor{emphasis}{\textbf{#1}}\hfill
+\textcolor{emphasis}#1\hfill
 \foreach \x in {1,...,5}{%
   \space{\ifnumgreater{\x}{#2}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
 }

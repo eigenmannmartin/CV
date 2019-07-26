@@ -14,7 +14,7 @@
 % ===============
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \documentclass[9pt,a4paper]{altacv}
-\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+\geometry{left=1cm,right=7cm,marginparwidth=6.1cm,marginparsep=0.45cm,top=0.5cm,bottom=0.5cm}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -52,71 +52,143 @@
 
 
 \begin{document}
-% ===============
-% Header
-% ===============
-\name{Martin Eigenmann}
-\tagline{Leader and Problem Solver}
-\photo{2.8cm}{Image}
-\personalinfo{%
-  %\email{contact@eigenmannmartin.ch}
-  %\phone{+41 78 697 35 14}
-  \homepage{eigenmannmartin.ch}
-  \twitter{@eigenmannmartin}
-  \linkedin{linkedin.com/in/eigenmannmartin}
-  \github{github.com/eigenmannmartin}
-}
-
-\begin{fullwidth}
-\makecvheader
-\end{fullwidth}
 
 % ===============
 % Experience
 % ===============
-\cvsection[sidebar]{Work Experience}%
+\cvsection[sidebar]{Professional Experience}%
 \makebox[0pt][l]{%
   \hspace{-4cm}
   \raisebox{-\totalheight}[0pt][0pt]{%
    {\color{background}\fontsize{250}{48}\faRocket}
 }}%
-\cvevent{Tech Lead}{ImagineCargo}{Jan. 2018 -- April 2019}{Zürich}
+
+\cvev{Tech Lead}{ImagineCargo}{Jan. 2018 -- Mai 2019}{Zürich}
+\makebox[0.6\linewidth][l]{\cvsubsubsection{Projects:} Panda, Samba}%
+\makebox[0.4\linewidth][r]{\cvsubsubsection{Area:} Green Logistics}
+
+\cvsubsection{Responsibilities:}
+
 \begin{itemize}
-\item Tech lead for Panda, an extremely versatile order management and delivery planning/optimizing platform for the logistics industry
-\item Making high-level design choices and defining technical standards, including coding standards, tools and platforms.
-\item Supervision and coordination of external software developers
-\item Lead full stack developer for Samba, a highly flexible website plugin for settling and managing deliveries or pickups
+\item Leading the process form costumer's idea to production and helping with implementation
+\item Translating business requirements into technical requirements
+\item Working on Solution and defining software architecture
+\item Choosing and managing the working process e.g. Scrum
+\item Making high-level design choices and defining technical standards, tools and platforms.
+\item Coordinating technical communication between nearshore team and stakeholders
+\item Helping in interviewing and finding the the right technical candidates and on-boarding them
+\item DevOps Tasks like CI, CD etc.
+\item Agile software development and testing
+\item Performing Code Reviews
 \end{itemize}
+
+\cvsubsubsection{Key Achievements:}
+successful Go-Live with limited time and budged;
+significantly reduced the number of specification changes by proactively identifying possible problems;
+coordinated and coached a team with all full remote workers
+
+\cvsubsubsection{Technologies Used:}
+JavaScript, React, Redux, ImmutableJS, Webpack, Vue, NextJS, NodeJS, Express,
+Python, Django, Ruby on Rails, NPM, Yarn, Babel,
+Rest, MVC, GIT, ORM, PostgreSQL, Redis,
+Gitlab, Github, Google Cloud, Docker, Kubernetes, Nginx,
+Jira, Confluence,
 
 \divider
 
-\cvevent{Full stack developer / Software Architect}{Kantonsspital St.Gallen}{Feb. 2016 -- Feb. 2018}{St. Gallen}
+
+\cvev{Freelance}{Bechterew Schweiz}{Dec. 2017 -- today}{Zürich}
+\makebox[0.6\linewidth][l]{\cvsubsubsection{Projects:} Rheumafit.ch, Bechterew.ch}%
+\makebox[0.4\linewidth][r]{\cvsubsubsection{Area:} Healthcare, non-profit}
+
+\cvsubsection{Responsibilities:}
 \begin{itemize}
-\item Design, architecture and project planning
-\item Lead full stack developer for Clean Care Monitor, a process audit and validation application for health care
-\item Contributor to guidelines.ch, responsible for rewriting the stack including design, architecture and UX
+\item Refining costumer's ideas and improving proposed specifications, UI-Designs
+\item Significant refactoring resulting in improved stability and usability
+\item Choosing and managing the working process e.g. Kanban
+\item DevOps Tasks like CD on Heroku, Github
+\item Project Management
+
 \end{itemize}
+
+\cvsubsubsection{Key Achievements:}
+coached non technical team members to successfully help with the project;
+successful Go-Live with very limited time (1 month);
+prevented project failure with a laser focus on the most important aspects;
+refined vague ideas into a well defined requirements
+
+\cvsubsubsection{Technologies Used:}
+JavaScript, Vue, Nuxt, Webpack, Python, Django, Yarn, Babel, Pipenv,
+Rest, MVC, GIT, ORM, PostgreSQL, Github, Heroku, Vimeo, Azure, PowerBI, Sentry
 
 \divider
 
-\cvevent{SAP Consultant / Assistant ICT Lead}{Loepfe Brothers Ltd.}{Apr. 2011 -- Oct. 2015}{Zürich}
+\cvev{Full stack developer}{Kantonsspital St.Gallen}{Jan. 2016 -- Feb. 2018}{St. Gallen}
+\makebox[0.6\linewidth][l]{\cvsubsubsection{Projects:} Guidelines.ch, CleanCareMonitor, Infekt.ch}%
+\makebox[0.4\linewidth][r]{\cvsubsubsection{Area:} Healthcare}
+
+\cvsubsection{Responsibilities:}
 \begin{itemize}
-\item Project stream lead during SAP implementation and rollout
-\item Supervised and enhanced network security and data protection
-%\item Recruited and mentored IT apprentices (EFZ)
+\item Finding requirements in an iterative process e.g. observing customers using the product
+\item Designed and implemented web application architecture
+\item Active role in ensuring good code quality and architecture and performing code reviews
+\item Working closely with POs and stakeholders
+\item Streamlining CI, CD and build pipeline
+\item Leading Role in improving application performance and maintainability
+\item Developing multiple PoC using rapid prototyping
+\item Project Planning
+
 \end{itemize}
 
-\divider
+\cvsubsubsection{Key Achievements:}
+rebuild CleanCareMonitor with different technologies and refined requirements significantly reduced complexity and technical dept while staying in budget and delivering on time;
+demonstrated that rapid prototyping enables the business to validate its ideas in a much more timely fashion
 
-\cvevent{IT Apprentice}{Abacus Research AG}{Jul. 2006 -- Okt. 2010}{St.Gallen}
+\cvsubsubsection{Technologies Used:}
+PHP, Symfony, IIS,
+JavaScript, React, Vue, NodeJS, Hapi, JWT, NPM, Yarn, Babel, Composer,
+MySQL, MSSQL, PostgreSQL, MongoDB, Rest, GraphQL,
+GIT, Github, Heroku, Flynn, DigitalOcean, Qlik, Auth0
+
+
+\newpage
+\cvsection[sidebar2]{Professional Experience}%
+
+\cvev{SAP consultant}{Loepfe Brothers AG}{Apr. 2011 -- Oct 2015}{Zürich}
+\makebox[0.6\linewidth][l]{\cvsubsubsection{Projects:} AS400 to SAP migration, Infrastructure virtualization}%
+\makebox[0.4\linewidth][r]{\cvsubsubsection{Area:} Industry}
+
+\cvsubsection{Responsibilities:}
 \begin{itemize}
-\item Everything IT related, from installing a PC up to configuring complex server and network infrastructure
-as well as trouble shooting and customer support.
+\item Active role in ensuring smooth and profitable operations of int. and ext. infrastructure
+\item Designing and improving Infrastructure protection and monitoring
+\item Project stream lead during SAP implementation and roll out
+\item Planning and executing virtualization strategy
+\item Assisting ICT lead
+\item Manage and train IT apprentices
+\item Helping to solve technical problems in collaboration with service providers
+\item Directly collaborating with external cyber security team to ensure best possible protection
+\item Project Management
+\item Helping in evaluation and sourcing of IT equipment
+\item Developing web applications for internal and external use
+\item Implementing automation helpers and scripts
+
 \end{itemize}
 
+\cvsubsubsection{Key Achievements:}
+mentored and developed a young IT apprentice, helped him to reach his potential and become a professional and expert on his field;
+professional communication with costumers on the hi
+
+\cvsubsubsection{Technologies Used:}
+SAP, ABAP, SmartForms,
+VMWare ESX, vCenter, vShpere, veeam, SAN,
+Exchange, FTP, DNS, DHCP, WSUS, AD, Ticket Sytem GLPI,
+Sopos, Nagios, iLO, SNMP, Firewall, F5 VPN,
+PHP, JavaScript, BackboneJS, Python, Django, Bash, Shell
 
 
-\cvsection{Project Hightlights}%
+
+\cvsection{Project Highlights}%
 \makebox[0pt][l]{%
   \hspace{-5cm}
   \raisebox{-\totalheight}[0pt][0pt]{%
@@ -124,19 +196,22 @@ as well as trouble shooting and customer support.
 }}%
 {\color{emphasis}Rheumafit.ch\par}
 \smallskip
-{\small\makebox[0.6\linewidth][l]{\small\color{body}{\faBars\hspace{0.5em}} Vue, Django, Postmark, Vimeo \& Heroku}}%
+{\small\makebox[0.6\linewidth][l]{\small\color{body}{\faBars\hspace{0.5em}} Vue, Django, Postmark, Sentry, Vimeo \& Heroku}}%
 {\small\makebox[0.4\linewidth][l]{\small\color{body}{\faMapMarker\hspace{0.5em}} Bechterew Schweiz}}\par
 \smallskip
 
 This platform provides a large variety of physio therapeutic exercises for patients with Bechterew's disease
 and aims to improve the health and mobility of the affected.
-
 \smallskip
 
-During one month of my civil service I assisted in defining requirements and appearance and
-implemented the platform according to the specifications. Since then, I am tasked with maintaining
-and improving the platform.
+In a very limited time we had to kick start and release the project. In the early phase of the project I used
+rapid prototyping to achieve fast iterations and bring all team members and stakeholders to the same level of knowledge.
+During the second half of the initial phase I rigorous challenged every new requirement or idea in order to maximize
+the benefit for patients and prevent feature creep.
+\smallskip
 
+Since the release in January 2018 I significantly extended the project scope, added functionality, improved usability for patients and streamlined
+administrative tasks.
 
 \divider
 
@@ -151,12 +226,16 @@ In Order to find and analyze causes of postoperative infection it was necessary 
 build a web based mobile app to allow standardized auditing of any kind of workflow
 before and during a surgery. Intensive requirement engineering beforehand,
 extensive testing and analyzing user interactions with the app where required
-to verify its applicability.
+to verify its applicability. The gathered data is then sent to external databases and BI tools for analysis and examination.
 
 \smallskip
+After a good initial feedback I decided to rebuild the application with a streamlined architecture
+and fewer dependencies in order to meet more (future) requirements and achieve better maintainability
+while still holding all deadlines.
 
-I was able to demonstrate that a rebuild of the application with a streamlined architecture
-and fewer dependencies meets more (future) requirements and is easier to maintain while still holding all deadlines.
+\smallskip
+This was the first web based product build exclusively for external stakeholders (BAG) and demonstrated
+that even a small team is able to handle complex legal and technical requirements.
 
 
 \end{document}
