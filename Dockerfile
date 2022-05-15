@@ -1,4 +1,4 @@
-FROM debian:9
+FROM debian:9 as build-stage
 
 
 RUN apt-get update \
@@ -20,3 +20,7 @@ COPY sidebar2.tex ./
 COPY altacv.cls ./
 COPY Image.png ./
 RUN pdflatex cv.tex && gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=/public/cv.pdf cv.pdf
+
+
+FROM scratch AS export-stage
+COPY --from=build-stage /public/cv.pdf /cv.pdf
