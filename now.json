@@ -1,5 +1,4 @@
 {
-    "version": 1,
-    "type": "static",
-    "alias": "cv.eigenmannmartin.ch"
+  "version": 2,
+  "alias": "cv.eigenmannmartin.ch"
 }

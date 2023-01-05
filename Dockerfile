@@ -23,4 +23,4 @@ RUN pdflatex cv.tex && gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -
 
 
 FROM scratch AS export-stage
-COPY --from=build-stage /public/cv.pdf /cv.pdf
+COPY --from=build-stage /public/cv.pdf /index.pdf
