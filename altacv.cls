@@ -118,7 +118,7 @@
 % \RequirePackage{marginfix}
 
 \setlength{\parindent}{0pt}
-\newcommand{\divider}{\bigskip\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\bigskip\medskip}
+\newcommand{\divider}{\medskip\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip\medskip}
 
 \newenvironment{fullwidth}{%
   \begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
@@ -191,7 +191,7 @@
 
 \newcommand{\cvsubsubsection}[1]{%
   \smallskip%
-  {\small\color{emphasis}{#1}}
+  {\small\textbf{\color{emphasis}{#1}}}
 }
 
 \newcommand{\cvsubsection}[1]{%
@@ -214,7 +214,7 @@
   {#2}\par
   \smallskip}
   \ifstrequal{#3}{}{}{{\small\makebox[0.6\linewidth][l]{\faCalendar\hspace{0.5em}#3}}}%
-  \ifstrequal{#4}{}{}{{\small\makebox[0.4\linewidth][l]{\faMapMarker\hspace{0.5em}#2}}}\par
+  \ifstrequal{#4}{}{}{{\small\makebox[0.4\linewidth][l]{\faMapMarker\hspace{0.5em}#4}}}\par
   \medskip\normalsize
 }
 
