@@ -3,260 +3,208 @@
 % Take a look at: https://github.com/liantze/AltaCV
 % ============================================================
 
-% Commands:
-% pdflatext cv.tex
-% latexmk -f -pdf -pvc cv.tex
-% gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=cv-compressed.pdf cv.pdf
+% Build instructions: see Readme.md.
+% Draft achievement awaiting engagement confirmation: implemented and
+% demonstrated the solution and onboarded the first internal customers.
 %
 
 % ===============
 % Setup
 % ===============
 \PassOptionsToPackage{dvipsnames}{xcolor}
-\documentclass[9pt,a4paper]{altacv}
-\geometry{left=1cm,right=7cm,marginparwidth=6.1cm,marginparsep=0.45cm,top=0.5cm,bottom=0.5cm}
+\documentclass[10pt,a4paper]{altacv}
+\geometry{left=1.4cm,right=7cm,marginparwidth=5.1cm,marginparsep=0.5cm,top=1.2cm,bottom=1.2cm}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[default]{lato}
-\usepackage{setspace}
-\usetikzlibrary{calc}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Martin Eigenmann -- Cloud and Platform Consultant},pdfauthor={Martin Eigenmann}}
 
 \renewcommand{\itemmarker}{{\small\textbullet}}
-\renewcommand{\ratingmarker}{\faCircle}
 
 % ===============
 % Colors
 % ===============
-\definecolor{Accent}{HTML}{3F769E}
-\definecolor{SlateGrey}{HTML}{2E2E2E}
-\definecolor{LightGrey}{HTML}{666666}
-\definecolor{background}{HTML}{F1F1F1}
+\definecolor{Accent}{HTML}{285C76}
+\definecolor{SlateGrey}{HTML}{202B32}
+\definecolor{LightGrey}{HTML}{39454D}
 \colorlet{heading}{Accent}
 \colorlet{accent}{Accent!90}
-\colorlet{headingline}{Accent!30}
+\colorlet{headingline}{Accent!25}
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
 
 
-\def\SLIDER#1#2{% 1: length, 2: position of the mark (0 to 1)
-\tikz[baseline=-0.1cm]{
- \coordinate (start) at (0,0);
- \coordinate (end) at (#1,0);
- \coordinate (mark) at ($(start)!#2!(end)$);
- \draw[line width=1pt, line cap=round, accent!30] (start) -- (end);
- \node[fill=white, draw=accent, very thin,
-            circle, minimum size=0.35cm, inner sep=0pt] at (mark) {};
-}
+\name{Martin Eigenmann}
+\tagline{Cloud \& Platform Consultant}
+\photo{2.7cm}{martin_portrait.jpeg}
+\personalinfo{%
+  Self-employed \enspace\textbullet\enspace Architecture Owner \enspace\textbullet\enspace Wil SG\par
+  \smallskip
+  \href{mailto:contact@eigenmannmartin.ch}{contact@eigenmannmartin.ch}\par
+  \smallskip
+  \href{https://linkedin.com/in/eigenmannmartin}{linkedin.com/in/eigenmannmartin}
+  \enspace\textbullet\enspace
+  \href{https://github.com/eigenmannmartin}{github.com/eigenmannmartin}
 }
 
 
 \begin{document}
 
+\begin{fullwidth}
+\makecvheader
+Independent cloud and platform consultant with over 15 years of experience across software development and IT infrastructure.
+I combine hands-on engineering with architecture ownership and customer coaching to help teams build and operate cloud services and delivery platforms.
+\par\medskip
+\end{fullwidth}
+
 % ===============
 % Experience
 % ===============
-\cvsection[sidebar]{Professional Experience}%
-\makebox[0pt][l]{%
-  \hspace{-4cm}
-  \raisebox{-\totalheight}[0pt][0pt]{%
-   {\color{background}\fontsize{250}{48}\faRocket}
-}}%
+\cvsection[sidebar]{Selected Engagements}
 
-\cvev{Senior DevOps Engineer}{Postfinance}{Aug. 2022 -- today}{remote}
-\makebox[0.6\linewidth][l]{\cvsubsubsection{Projects:} Pipeline and Toolchain}%
-\makebox[0.4\linewidth][r]{\cvsubsubsection{Area:} Cloud Services and Infrastructure}
-
-\cvsubsection{Responsibilities:}
+\cvev{Architecture Owner}{PostFinance}{Sep 2024 -- Present}{Remote}
+\cvsubsection{Self-employed project engagement; Architecture Owner since Jun 2026}
+\cvsubsubsection{Project:} Greenfield test platform --- pilot; MVP targeted for Jan 2027\par
 
 \begin{itemize}
-\item Enable and mentor customers to use state-of-the-art pipelines and follow best practices
-\item Design, implement, and improve CI/CD pipelines
-\item Design and implement API management and API management processes
-\item Implement observability best practices
+\item Own the architecture of a greenfield test platform for end-to-end testing across applications, reusing tests written by application developers
+\item Enable continuous test execution using standard pipeline testing tools, within and outside CI pipelines, across dynamic and persistent environments
 \end{itemize}
 
-\cvsubsubsection{Key Achievements:}
-Improvement of deployment frequency through a more sophisticated pipeline architecture;
+\cvsubsubsection{Target outcome:}
+Reduce duplicate test development; replace the low-code testing solution for persistent environments, targeted for 2028.\par\smallskip
 
-\cvsubsubsection{Technologies Used:}
-Gitlab, Kubernetes, Bash, Docker, Vault, Jira, Confluence
+\cvsubsubsection{Earlier role: Senior DevOps Engineer}\par
+First PostFinance engagement began in Aug 2022; returned in Sep 2024.\par
+Designed CI/CD pipelines and API management solutions, implemented observability practices, and coached customers.
+Improved deployment frequency by redesigning the pipeline architecture.
+
+\cvsubsubsection{Earlier technologies:}
+GitLab, Kubernetes, Bash, Docker, Vault
 
 \divider
 
-\cvev{Head of Cloud Engineering}{Stackworks}{Jan 2024 -- Mai 2025}{on-site}
-\makebox[0.6\linewidth][l]{\cvsubsubsection{Projects:} Strategic Service Portfolio Development}%
-\makebox[0.4\linewidth][r]{\cvsubsubsection{Area:} Cloud Services, Infrastructure and AI}
-
-\cvsubsection{Responsibilities:}
+\cvev{Head of Cloud Engineering}{Stackworks}{Jan 2024 -- May 2025}{On-site}
+\cvsubsection{Initially an external project; internal employment continued until May 2025}
+Gradual offboarding from Sep 2024, alongside the resumed PostFinance engagement.\par
+\cvsubsubsection{Focus:} Strategic expansion in cloud services, infrastructure and AI
 
 \begin{itemize}
-\item Develop and maintain GCP strategic service portfolio
-\item Enable and mentor customers to use state-of-the-art GCP services
-\item Design, implement, and maintain PoC for customers
-\item Support customers on a strategic and architectural level
+\item Led strategic business-segment expansion with two colleagues and contributed to annual strategic business planning
+\item Designed the product and service portfolio and provided technical coaching
+\item Built proofs of concept and advised customers on Google Cloud strategy, architecture, and service adoption
 \end{itemize}
 
 \cvsubsubsection{Key Achievements:}
-Evaluation of strategic business expansion;
-Development and implementation of a new class of services;
+Developed new service offerings and evaluated opportunities for business expansion.
 
-\cvsubsubsection{Technologies Used:}
-TOGAF, GCP, OpenAI, Kubernetes, Docker, Python
+\par\smallskip
+\cvsubsubsection{Technologies and frameworks:}
+Google Cloud, OpenAI, Kubernetes, Docker, Python; TOGAF
 
 \divider
 
-\cvev{Senior DevOps Engineer}{Bundesamt BIT}{Aug. 2021 -- July 2022}{remote}
-\makebox[0.6\linewidth][l]{\cvsubsubsection{Projects:} PostgreSQL, Vault and Keycloak as a service}%
-\makebox[0.4\linewidth][r]{\cvsubsubsection{Area:} Cloud Services and Infrastructure}
-
-\cvsubsection{Responsibilities:}
+\cvev{Senior DevOps Engineer}{Bundesamt BIT}{Aug 2021 -- Jul 2022}{Remote}
+\cvsubsection{Self-employed project engagement}
+\cvsubsubsection{Project:} PostgreSQL, Vault and Keycloak as managed services
 
 \begin{itemize}
-\item Develop, operate, and maintain PostgreSQL, Vault, and Keycloak as a service
-\item Design and implement CI/CD pipelines
-\item Provide customer support
-\item Actively contribute to service offerings
+\item Developed and operated managed PostgreSQL, Vault, and Keycloak services with CI/CD pipelines, monitoring, and alerting
+\item Delivered PostgreSQL as a managed service, supported customers, and contributed to service offerings
 \end{itemize}
 
-\cvsubsubsection{Key Achievements:}
-Successfully develop, deploy, and maintain PostgreSQL as a managed service offering;
-ensure monitoring, alerting, and availability of all managed services;
-
-
-\cvsubsubsection{Technologies Used:}
-Go, Python, Bash, Ansible, Docker, PostgreSQL, Vault, Redis, Cassandra, Jira, Confluence, Openshift, RKE, Kubernetes
-
-
-\divider
-
-\cvev{Senior Software Developer}{University St.Gallen}{Sept. 2019 -- July 2021}{St.Gallen}
-\makebox[0.6\linewidth][l]{\cvsubsubsection{Projects:} Nassy, ProMiSE}%
-\makebox[0.4\linewidth][r]{\cvsubsubsection{Area:} Business process management, Neuro adaptive systems}
-
-\cvsubsection{Responsibilities:}
-
-\begin{itemize}
-\item Contributing to and shaping research ideas
-\item Researching optimal tech stack and software architecture
-\item Conducting neuro-physiological experiments (eye tracking, GSR, EEG)
-\item Engineering streaming platform for live analysis of neuro-physiological data streams
-\item Actively contribute to research projects
-\item Operate and maintain key infrastructure
-\end{itemize}
-
-\cvsubsubsection{Key Achievements:}
-collaboration on a successful four-year SNF proposal for ProMiSe;
-envisioned and implemented institute-level IT infrastructure;
-
-
-\cvsubsubsection{Technologies Used:}
-Java, Python, Pandas, Kafka, Nifi, Spark, Camunda, Docker, PostgreSQL, Influxdb, Jira, Confluence, Nvidia DGX, Proxmox
+\cvsubsubsection{Technologies:}
+Go, Python, Ansible, Kubernetes, OpenShift, PostgreSQL, Vault, Keycloak
 
 
 \newpage
-\cvsection[sidebar2]{Professional Experience}%
+\begin{fullwidth}
+{\color{emphasis}\large\bfseries Martin Eigenmann}\hfill Cloud \& Platform Consultant\par
+\smallskip
+\end{fullwidth}
+\cvsection[sidebar2]{Further Experience}
 
-
-\cvev{Fullstack developer}{Ankylosing Spondylitis Assoc.}{Dec. 2017 -- now}{Zürich}
-\makebox[0.6\linewidth][l]{\cvsubsubsection{Projects:} Rheumafit, BeeFit}%
-\makebox[0.4\linewidth][r]{\cvsubsubsection{Area:} Healthcare}
-
-\cvsubsection{Responsibilities:}
-
-\begin{itemize}
-  \item Operate and maintain key infrastructure
-  \item Promote and implement new and simplified technology stacks
-  \item Improve system and service availability and stability
-  \item Ensure highest software quality through test automation and code analysis
-\end{itemize}
-
-
-\cvsubsubsection{Technologies Used:}
-Python, Node, Nuxt, Vue, Heroku, RKE2, Postgres, Redis, Docker, Github Actions
-
-\divider
-
-\cvev{Tech Lead}{ImagineCargo}{Jan. 2018 -- Mai 2019}{Zürich}
-\makebox[0.6\linewidth][l]{\cvsubsubsection{Projects:} Panda, Samba}%
-\makebox[0.4\linewidth][r]{\cvsubsubsection{Area:} Green Logistics}
-
-\cvsubsection{Responsibilities:}
+\cvev{Senior Software Developer}{University of St.Gallen}{Sep 2019 -- Jul 2021}{St. Gallen}
+\cvsubsubsection{Projects:} Nassy, ProMiSE --- business process management and neuroadaptive systems
 
 \begin{itemize}
-\item Leading projects from concept to production, including DevOps.
-\item Designing and developing SPAs using React, with a focus on clean architecture and testing.
-\item Defining architecture from business requirements.
-\item Managing agile processes, including team coordination, onboarding, and recruitment.
-\item Performing code reviews and ensuring effective stakeholder communication.
+\item Built a streaming platform for live analysis of neurophysiological data and conducted eye-tracking, GSR, and EEG experiments
+\item Shaped research ideas, selected software architectures, and designed and operated institute-level IT infrastructure
 \end{itemize}
 
 \cvsubsubsection{Key Achievements:}
-Successful Go-Live with limited time and budget;
-Significantly reduced the number of specification changes by proactively identifying possible problems;
-Coordinated and coached a team with all full-time remote workers
+Contributed to a successful four-year SNF funding proposal for ProMiSE.
 
-\cvsubsubsection{Technologies Used:}
-JavaScript, React, Redux, ImmutableJS, Webpack, Vue, NextJS, NodeJS, Express,
-Python, Django, Ruby on Rails, NPM, Yarn, Babel,
-Rest, MVC, GIT, ORM, PostgreSQL, Redis,
-Gitlab, Github, Google Cloud, Docker, Kubernetes, Nginx,
-Jira, Confluence
+
+\par\smallskip
+\cvsubsubsection{Technologies:}
+Java, Python, Kafka, NiFi, Spark, Camunda, Docker, PostgreSQL, Proxmox
 
 
 \divider
 
-\cvev{Full Stack Developer}{Kantonsspital St.Gallen}{Jan. 2016 -- Feb. 2018}{St. Gallen}
-\makebox[0.6\linewidth][l]{\cvsubsubsection{Projects:} Guidelines.ch, CleanCareMonitor, Infekt.ch}%
-\makebox[0.4\linewidth][r]{\cvsubsubsection{Area:} Healthcare}
 
-\cvsubsection{Responsibilities:}
+\cvev{Full Stack Developer}{Ankylosing Spondylitis Assoc.}{Dec 2017 -- Present}{Zürich}
+\cvsubsubsection{Projects:} Rheumafit, BeeFit --- healthcare
+
 \begin{itemize}
-\item Finding requirements in an iterative process, e.g., observing customers using the product
-\item Active role in ensuring good code quality and architecture, and performing code reviews
-\item Streamlining CI, CD, and build pipeline
-\item Leading Role in improving application performance and maintainability
-\item Developing multiple PoC using rapid prototyping
-\item Project Planning and Project Management
-
+\item Operate infrastructure and improve service availability and stability
+\item Simplify technology stacks and improve software quality through test automation and code analysis
 \end{itemize}
 
-\cvsubsubsection{Key Achievements:}
-Rebuilt CleanCareMonitor with different technologies and refined requirements, significantly reduced complexity and technical debt while staying in budget and delivering on time;
-demonstrated that rapid prototyping enables the business to validate its ideas in a much more timely fashion
 
-\cvsubsubsection{Technologies Used:}
-PHP, Symfony, IIS,
-JavaScript, React, Vue, NodeJS, Hapi, JWT, NPM, Yarn, Babel, Composer,
-MySQL, MSSQL, PostgreSQL, MongoDB, Rest, GraphQL,
-GIT, Github, Heroku, Flynn, DigitalOcean, Qlik, Auth0
+\cvsubsubsection{Technologies:}
+Python, Node.js, Nuxt, Vue, RKE2, PostgreSQL, Redis, GitHub Actions
 
 \divider
 
-\cvev{SAP consultant}{Loepfe Brothers AG}{Apr. 2011 -- Oct 2015}{Zürich}
-\makebox[0.6\linewidth][l]{\cvsubsubsection{Projects:} AS400 to SAP migration, Infrastructure virtualization}%
-\makebox[0.4\linewidth][r]{\cvsubsubsection{Area:} Industry}
+\cvev{Tech Lead}{ImagineCargo}{Jan 2018 -- May 2019}{Zürich}
+\cvsubsubsection{Projects:} Panda, Samba --- green logistics
 
-\cvsubsection{Responsibilities:}
 \begin{itemize}
-\item Leading and supporting infrastructure operations, protection, and monitoring
-\item Project stream lead during SAP implementation and roll out
-\item Collaborating with external cybersecurity teams and service providers
-\item Solving technical issues and ensuring system reliability
-\item Developing web applications for internal and external use
+\item Led architecture and delivery from concept to production, including React applications and stakeholder communication
+\item Coordinated and coached a fully remote team, including recruitment, onboarding, code reviews, and agile delivery
+\end{itemize}
+
+\cvsubsubsection{Key Achievements:}
+Delivered a successful launch within limited time and budget; reduced specification changes by identifying potential problems early.
+
+\par\smallskip
+\cvsubsubsection{Technologies:}
+JavaScript, React, Node.js, Python, Django, PostgreSQL, Google Cloud, Kubernetes
+
+
+\divider
+
+\cvev{Full Stack Developer}{Kantonsspital St.Gallen}{Jan 2016 -- Feb 2018}{St. Gallen}
+\cvsubsubsection{Projects:} Guidelines.ch, CleanCareMonitor, Infekt.ch --- healthcare
+\begin{itemize}
+\item Gathered requirements through user observation and prototypes; planned projects and reviewed code
+\item Improved architecture and CI/CD; led improvements to performance and maintainability
 
 \end{itemize}
 
 \cvsubsubsection{Key Achievements:}
-mentored and developed a young IT apprentice, helped him to reach his potential and become a professional and expert in his field;
-professional communication with customers on the highest level
+Rebuilt CleanCareMonitor on time and within budget, reducing complexity and technical debt; used rapid prototypes to accelerate validation of business ideas.
 
-\cvsubsubsection{Technologies Used:}
-SAP, ABAP, SmartForms,
-VMWare ESX, vCenter, vShpere, veeam, SAN,
-Exchange, FTP, DNS, DHCP, WSUS, AD, Ticket Sytemm GLPI,
-Sopos, Nagios, iLO, SNMP, Firewall, F5 VPN,
-PHP, JavaScript, BackboneJS, Python, Django, Bash, Shell
+\par\smallskip
+\cvsubsubsection{Technologies:}
+PHP, Symfony, JavaScript, React, Vue, Node.js, PostgreSQL, GraphQL
+
+\divider
+
+\cvev{SAP Consultant}{Loepfe Brothers AG}{Apr 2011 -- Oct 2015}{Zürich}
+\cvsubsubsection{Projects:} AS/400-to-SAP migration and infrastructure virtualization
+\begin{itemize}
+\item Led an SAP implementation workstream and operated infrastructure with external security teams and service providers
+\item Developed web applications and mentored an IT apprentice
+
+\end{itemize}
+
+\cvsubsubsection{Technologies:}
+SAP, ABAP, VMware vSphere, Veeam, PHP, JavaScript, Python, Django
 
 
 \end{document}

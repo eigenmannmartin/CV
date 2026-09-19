@@ -1,26 +1,15 @@
-FROM debian:9 as build-stage
-
+FROM debian:13-slim AS build-stage
 
 RUN apt-get update \
-    && apt-get install -y \
-    texlive-latex-base texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
-    && apt-get clean \
+    && apt-get install -y --no-install-recommends \
+       make texlive-latex-base texlive-latex-extra \
+       texlive-fonts-extra \
     && rm -rf /var/lib/apt/lists/*
 
+WORKDIR /usr/src/cv
 
-# Set the default working directory
-WORKDIR /usr/src
-
-
-RUN mkdir /public
-# Copy the relevant files to the working directory
-COPY cv.tex ./
-COPY sidebar.tex ./
-COPY sidebar2.tex ./
-COPY altacv.cls ./
-COPY Image.png ./
-RUN pdflatex cv.tex && gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=/public/cv.pdf cv.pdf
-
+COPY Makefile cv.tex sidebar.tex sidebar2.tex altacv.cls martin_portrait.jpeg ./
+RUN make pdf PDFLATEX=pdflatex
 
 FROM scratch AS export-stage
-COPY --from=build-stage /public/cv.pdf /index.pdf
+COPY --from=build-stage /usr/src/cv/public/index.pdf /index.pdf

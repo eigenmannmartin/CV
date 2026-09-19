@@ -108,7 +108,7 @@
 \usetikzlibrary{arrows}
 \RequirePackage[skins]{tcolorbox}
 \RequirePackage{enumitem}
-\setlist{leftmargin=*,labelsep=0.5em,nosep,itemsep=0.25\baselineskip,after=\vskip0.25\baselineskip}
+\setlist{leftmargin=1em,labelsep=0.45em,topsep=0.5ex,itemsep=0.35ex,parsep=0pt,partopsep=0pt}
 \setlist[itemize]{label=\itemmarker}
 \RequirePackage{graphicx}
 \RequirePackage{etoolbox}
@@ -118,7 +118,7 @@
 % \RequirePackage{marginfix}
 
 \setlength{\parindent}{0pt}
-\newcommand{\divider}{\medskip\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip\medskip}
+\newcommand{\divider}{\par\addvspace{1.4ex}{\color{headingline}\hrule width\linewidth height 0.4pt}\vspace{1.4ex}}
 
 \newenvironment{fullwidth}{%
   \begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
@@ -163,11 +163,11 @@
   \begingroup
     \ifdef{\@photodiameter}{\begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}}{}%
     \raggedright\color{emphasis}%
-    {\Huge\bfseries\MakeUppercase{\@name}\par}
+    {\fontsize{28}{32}\selectfont\bfseries\@name\par}
+    \smallskip
+    {\Large\bfseries\color{accent}\@tagline\par}
     \medskip
-    {\large\bfseries\color{accent}\@tagline\par}
-    \medskip
-    {\footnotesize\bfseries\@personalinfo\par}
+    {\small\@personalinfo\par}
     \ifdef{\@photodiameter}{%
     \end{minipage}\hfill%
     \begin{minipage}{\@photodiameter}
@@ -183,39 +183,34 @@
 \renewenvironment{quote}{\color{accent}\itshape\large}{\par}
 
 \newcommand{\cvsection}[2][]{%
-  \bigskip%
-  \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip-2pt}\raggedright\input{#1}}}%
-  {\color{heading}\LARGE\bfseries{#2}}\\[-1ex]%
-  {\color{headingline}\hdashrule{\linewidth}{1pt}{0.5ex}\par}\bigskip
+  \par\addvspace{1.5ex}%
+  \ifstrequal{#1}{}{}{\marginpar{\vspace*{3pt}\raggedright\fontsize{9.5}{11.5}\selectfont\input{#1}}}%
+  {\color{heading}\large\bfseries #2\par}%
+  \vspace{0.6ex}{\color{headingline}\hrule width\linewidth height 0.6pt}\vspace{1.2ex}
 }
 
 \newcommand{\cvsubsubsection}[1]{%
-  \smallskip%
-  {\small\textbf{\color{emphasis}{#1}}}
+  {\textbf{\color{emphasis}#1}}
 }
 
 \newcommand{\cvsubsection}[1]{%
-  \cvsubsubsection{#1}\par\smallskip
+  {\small\color{emphasis}#1\par}\smallskip
 }
 
 % v1.1.4: fixes inconsistent font size
 \newcommand{\cvev}[4]{%
-  \ifstrequal{#3}{}{}{{\makebox[0.3\linewidth][l]{#3}}}%
-  \makebox[0.4\linewidth][c]{\LARGE\color{emphasis}#1}%
-  \ifstrequal{#4}{}{}{{\makebox[0.3\linewidth][r]{#2}}}\par
-  \medskip\normalsize
+  {\large\bfseries\color{emphasis}#1}\hfill{\bfseries#2}\par
+  {\small#3\hfill#4\par}\smallskip
 }
 
 \newcommand{\cvevent}[4]{%
-  {\large\color{emphasis}#1\par}
+  {\bfseries\color{emphasis}#1\par}
   \smallskip
-  \smallskip\normalsize
   \ifstrequal{#2}{}{}{
   {#2}\par
   \smallskip}
-  \ifstrequal{#3}{}{}{{\small\makebox[0.6\linewidth][l]{\faCalendar\hspace{0.5em}#3}}}%
-  \ifstrequal{#4}{}{}{{\small\makebox[0.4\linewidth][l]{\faMapMarker\hspace{0.5em}#4}}}\par
-  \medskip\normalsize
+  {\small\color{accent}#3\ifstrequal{#3}{}{}{\ifstrequal{#4}{}{}{\enspace\textbullet\enspace}}#4\par}%
+  \medskip
 }
 
 \newcommand{\cvachievement}[3]{%
@@ -302,16 +297,6 @@
 }
 
 \newenvironment{cvcolumn}[1]{\begin{minipage}[t]{#1}\raggedright}{\end{minipage}}
-
-\RequirePackage[backend=biber,style=authoryear,sorting=ydnt]{biblatex}
-%% For removing numbering entirely when using a numeric style
-% \setlength{\bibhang}{1em}
-% \DeclareFieldFormat{labelnumberwidth}{\makebox[\bibhang][l]{\itemmarker}}
-% \setlength{\biblabelsep}{0pt}
-\defbibheading{pubtype}{\cvsubsection{#1}}
-\renewcommand{\bibsetup}{\vspace*{-\baselineskip}}
-\AtEveryBibitem{\makebox[\bibhang][l]{\itemmarker}}
-\setlength{\bibitemsep}{0.25\baselineskip}
 
 % v1.1.2: make it easier to add a sidebar aligned with top of next page
 \RequirePackage{afterpage}
