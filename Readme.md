@@ -61,7 +61,7 @@ finished PDF, and does not require a LaTeX installation on the host.
 ## Source files
 
 - `cv.tex`: profile header and professional experience.
-- `sidebar.tex`: core skills, coaching and data protection courses on page one.
-- `sidebar2.tex`: certifications, education and languages on page two.
+- `sidebar.tex`: education (M.Sc., B.Sc., CAS DPO) and core expertise on page one.
+- `sidebar2.tex`: certifications, further education (incl. coaching), languages and personal details on page two.
 - `altacv.cls`: shared layout and typography.
 - `martin_portrait.jpeg`: portrait used in the document.
